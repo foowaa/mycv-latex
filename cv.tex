@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\setCJKsansfont{KaiTi}
+\setCJKmonofont{SimHei}
+% Use Dark blue instead of lightblue
+\definecolor{color1}{RGB}{0,0,139}
+
+% Manage page size
+\RequirePackage[scale=0.9]{geometry}
+
+% Manage encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
+% Good bibliography
+\RequirePackage[backend=biber, doi=true, sorting=ydnt]{biblatex}
+\addbibresource[datatype=bibtex]{biblio.bib}
+\RequirePackage{csquotes}
+
+% Nice and fancy font-icons
+\RequirePackage{academicons}
+\RequirePackage{fontawesome5}
+\RequirePackage{fontspec}
+
+% Nice and fancy underlines
+\RequirePackage[normalem]{ulem}
+\RequirePackage{contour}
+\renewcommand{\ULdepth}{1.8pt}\contourlength{0.6pt}
+\newcommand{\myuline}[1]{\uline{\contour{white}{#1}}}
+\newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
+
+\newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
+\newcommand{\myitem}[1]{\cvitem{}{ \qquad  \faAnchor \quad \small{#1}}}
+\newcommand{\mypointf}[1]{\cvitem{ \faCheckCircle }{{#1}}}
+
+\newcommand{\mypoints}[1]{\cvitem{}{ \small{#1}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\small{#3}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
+\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
+
+
+\name{master}{}
+
+\extrainfo{
+	% Date of birth
+	\faCalendar\ 1992-08-06\\
+	% Phone number
+	\faMobile\ +86-16666666666\\
+	% Github
+	\faGithub\ \myuline{\href{https://github.com/master/}{\nolinkurl{@master}}}\\
+	% Email
+	\faEnvelope\ \myuline{\href{mailto:master@live.com}{\nolinkurl{master@live.com}}}\\
+	% Website
+	\faGlobe\ \myurl{https://master.github.io/}
+}
+% Picture
+\photo[64pt][2pt]{pictures/foto}
+
+
+\begin{document}
+
+\makecvtitle
+	\section{\texorpdfstring{\faUniversity\ 教育背景}{Education}}
+		\mycvitemEDU{2015-2018}{硕士}{信息处理}{xyz大学}{北京}
+		\mycvitemEDU{2010-2014}{学士}{通信工程}{abc大学}{北京}
+
+\vfill
+
+	\section{\texorpdfstring{\faBuilding\ 工作经历}{Experience}}
+		\mycvitemXP{2019-至今}{创始人}{}{xxx公司}
+		\mycomment{做了1}
+		\mycomment{做了2}
+		
+		\mycvitemXP{2018-2019}{xx工程师}{}{xxx公司}
+		\mycomment{做了1}
+		\mycomment{做了2}
+
+	\vfill	
+	
+	\section{\texorpdfstring{\faLaptop\ 工作及项目经历}{Projects}}
+	\mycvitemXP{2019-至今}{技术总监}{}{xxx公司}
+		\mypointf{人事}
+		\mypoints{具体1}
+		\mypoints{具体2}
+		\myitem{还可以再具体1}
+		\myitem{还可以再具体2}
+		\mypointf{技术}
+		\mypoints{具体1}
+		\mypoints{具体2}
+		
+		
+	\mycvitemXP{2018-2019}{xx工程师}{}{xxx公司}
+		\mypointf{项目1}
+		\mypoints{具体1}
+		\mypoints{具体2}
+		\mypointf{项目2}
+		\mypoints{具体1}
+		\mypoints{具体2}
+   
+    
+	\section{\texorpdfstring{\faAngellist\ 开源项目}{Open}}
+	 \mycomment{项目1}
+	 \mycomment{项目2}
+	 
+	 
+	\section{\texorpdfstring{\faArchway\ 技能与兴趣}{Skills}}
+	 \mycomment{好读书，不求甚解}
+	 \mycomment{热爱学习和挑战性}
+
+  % 如果有论文可以写这里
+	\nocite{*}
+	\section{\texorpdfstring{\faBook\ 论文、专利及其他}{Publications}}
+	\printbibliography[heading=none]
+
+
+
+\end{document}
